@@ -18,69 +18,69 @@ public class pf_genericmethods {
 	public void cl_entertext(WebElement ele,String text){
 		ele.sendKeys(text);
 	}
-	
-	
-	
-//	to click on any element
+
+
+
+	//	to click on any element
 	public void cl_click(WebElement ele){
 		ele.click();
 	}
-	
-// select an Element from dropdown
+
+	// select an Element from dropdown
 	public void cl_selectfromdropdown(List<WebElement> ele,String value){
 		int size = ele.size();
-		
+
 		for(WebElement xyz: ele){
-			
-			
-			
+
+
+
 			if(xyz.getText().equals(value)){
-				
+
 				xyz.click();
 				break;
-				
+
 			}
+		}
+
+
+
 	}
-		
-		
-		
-	}
-	
+
 	public void cl_selectfrommultipicklist(List<WebElement> ele,String value,WebDriver driver ){
 		int size = ele.size();
-		
+
 		for(WebElement xyz: ele){
-			
-			
-			
+
+
+
 			if(xyz.getText().equals(value)){
-				
+
 				Actions action = new Actions(driver);
 				action.moveToElement(xyz).doubleClick().build().perform();
 				break;
-				
+
 			}
-	}
-		
-		
-		
-	}
-	
-	
-	
-	
-	public void keyWords(String Key, WebDriver driver){
-		
-		switch (Key){
-		
-		case "EnterText":
-			
-		
-		
 		}
-		
+
+
+
 	}
-	
+
+
+
+
+	public void keyWords(String Key, WebDriver driver){
+
+		switch (Key){
+
+		case "EnterText":
+
+
+
+		}
+
+	}
+
 	public void switchToDifferentWindow(String parent, String testdata, WebDriver driver ){
 		Set<String> windowHandles = driver.getWindowHandles();
 		Iterator<String> it = windowHandles.iterator();
@@ -92,17 +92,17 @@ public class pf_genericmethods {
 				driver.switchTo().window(handle);
 				//System.out.println(fd.getCurrentUrl());
 				String title = driver.getTitle();
-				
+
 				if (title.contains(testdata)){
 					break;
 				}
-				
+
 			}
 
 		}
-		
+
 	}
-	
+
 	public String verifydataFrom_SFWebTable(String xPath, String testdata,WebDriver driver){
 		List<WebElement> rowelement = driver.findElements(By.xpath(xPath));
 		String colxPath= xPath+"[1]/th";
@@ -119,7 +119,7 @@ public class pf_genericmethods {
 				flag=1;
 				driver.findElement(By.xpath(xpath1)).click();
 				return val;
-				
+
 			}
 			else{
 
@@ -131,7 +131,7 @@ public class pf_genericmethods {
 						flag=1;
 						driver.findElement(By.xpath(xpath2)).click();
 						return val1;
-						
+
 					}
 
 				}
@@ -139,19 +139,52 @@ public class pf_genericmethods {
 
 			}
 
-			
+
 
 			//startTest.log(LogStatus.FAIL, stepName , "Failed as the Step "  + stepName + " ." + startTest.addScreenCapture(getScreenshot()));
 
 
 
 		}
-		
+
 		return null;
 
 	}
-	
-	
-	
+
+
+	public String verifydataFrom_WebTable(String xPath, String testdata,WebDriver driver){
+		List<WebElement> rowelement = driver.findElements(By.xpath(xPath));
+		String colxPath= xPath+"[1]/td";
+		List<WebElement> colelement = driver.findElements(By.xpath(colxPath));
+		int row=rowelement.size();
+		int col=colelement.size();
+		int flag=0;
+		for (int r=1;r<=row;r++){
+
+			//This is to test Github sync
+			for (int c=1;c<=col;c++){
+
+				String xpath2=xPath+"["+ (r) +"]"+"/td["+(c)+"]";
+				String val1=driver.findElement(By.xpath(xpath2)).getText();
+				if (val1.equalsIgnoreCase(testdata)){
+					flag=1;
+				String	xpath3=xpath2+"/a";
+					driver.findElement(By.xpath(xpath3)).click();
+					return val1;
+
+				}
+
+			}
+
+
+
+		}
+
+		return null;
+
+	}
+
+
+
 
 }
