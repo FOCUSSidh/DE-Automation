@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="81328" started-at="2017-02-10T06:05:08Z" finished-at="2017-02-10T06:06:29Z">
+    <groups>
+      <group name="SIT">
+        <method signature="driver_script.driverScript(java.util.Map)[pri:1, instance:Testscript.driver_script@2f8f11]" name="driverScript" class="Testscript.driver_script"/>
+      </group> <!-- SIT -->
+    </groups>
+    <test name="Test" duration-ms="81328" started-at="2017-02-10T06:05:08Z" finished-at="2017-02-10T06:06:29Z">
+      <class name="Testscript.script_Login">
+        <test-method status="PASS" signature="create_Report()[pri:0, instance:Testscript.script_Login@1565ec2]" name="create_Report" is-config="true" duration-ms="497" started-at="2017-02-10T11:35:07Z" finished-at="2017-02-10T11:35:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- create_Report -->
+      </class> <!-- Testscript.script_Login -->
+      <class name="Testscript.driver_script">
+        <test-method status="PASS" signature="launchApp(java.lang.String)[pri:0, instance:Testscript.driver_script@2f8f11]" name="launchApp" is-config="true" duration-ms="22663" started-at="2017-02-10T11:35:10Z" finished-at="2017-02-10T11:35:33Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ch]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method status="PASS" signature="driverScript(java.util.Map)[pri:1, instance:Testscript.driver_script@2f8f11]" name="driverScript" duration-ms="54038" started-at="2017-02-10T11:35:33Z" data-provider="genericLibrary" finished-at="2017-02-10T11:36:27Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Order=1.0, Script=PreTrialCaseCreation, TestDataSheetName=Case_Creation_Data, TC_ID=TC_01, Execute=Y, SheetName=Case_Creation}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverScript -->
+        <test-method status="PASS" signature="cloaseApp(org.testng.ITestResult)[pri:0, instance:Testscript.driver_script@2f8f11]" name="cloaseApp" is-config="true" duration-ms="2186" started-at="2017-02-10T11:36:27Z" finished-at="2017-02-10T11:36:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=driverScript status=SUCCESS method=driver_script.driverScript(java.util.Map)[pri:1, instance:Testscript.driver_script@2f8f11] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cloaseApp -->
+      </class> <!-- Testscript.driver_script -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
