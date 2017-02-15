@@ -184,6 +184,16 @@ public class driver_script extends Base {
 				Thread.sleep(10000);
 				break;
 
+				
+			case "verifydataFrom_WebTable":
+				String flag1 = genericmethods.verifydataFrom_WebTable(xPath, testdata, fd);
+				if (flag1!=null){
+					cv_contains(flag1, testdata, stepName);
+				}
+				else{
+					startTest.log(LogStatus.FAIL, stepName , "No Value found "  + stepName + " ." + startTest.addScreenCapture(getScreenshot()));
+				}
+				break;
 
 
 
